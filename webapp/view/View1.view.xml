@@ -6,7 +6,7 @@
     <Page id="page" title="{i18n>title}">
 		 <f:Form id="FormChange354" editable="true">
             <f:title>
-                <core:Title text="Boletim" />
+                <core:Title text="{i18n>appDescription}" />
             </f:title>
             <f:layout>
                 <f:ResponsiveGridLayout
@@ -27,34 +27,34 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="1º Bimestre">
+                        <f:FormElement label="1º {i18n>bi}">
                             <f:fields>
                                 <Input value="0" id="b1"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="2º Bimestre">
+                        <f:FormElement label="2º {i18n>bi}">
                             <f:fields>
                                 <Input value="0" id="b2"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="3º Bimestre">
+                        <f:FormElement label="3º {i18n>bi}">
                             <f:fields>
                                 <Input value="0" id="b3"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="4º Bimestre">
+                        <f:FormElement label="4º {i18n>bi}">
                             <f:fields>
                                 <Input value="0" id="b4"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Resultado">
+                        <f:FormElement label="{i18n>result}">
                             <f:fields>
                                 <Input value="0" id="resultado" editable="false"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="">
                             <f:fields>
-                                <Button text="Calcular" press="onCalcular"/>
+                                <Button text="{i18n>calc}" press="onCalcular"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
