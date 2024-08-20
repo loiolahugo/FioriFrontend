@@ -1,65 +1,40 @@
 <mvc:View controllerName="zhov.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-		 <f:Form id="FormChange354" editable="true">
-            <f:title>
-                <core:Title text="{i18n>appDescription}" />
-            </f:title>
-            <f:layout>
-                <f:ResponsiveGridLayout
-                    labelSpanXL="3"
-                    labelSpanL="3"
-                    labelSpanM="3"
-                    labelSpanS="12"
-                    adjustLabelSpan="false"
-                    emptySpanXL="4"
-                    emptySpanL="4"
-                    emptySpanM="4"
-                    emptySpanS="0"
-                    columnsXL="1"
-                    columnsL="1"
-                    columnsM="1"
-                    singleContainerFullSize="false" />
-            </f:layout>
-            <f:formContainers>
-                <f:FormContainer>
-                    <f:formElements>
-                        <f:FormElement label="1º {i18n>bi}">
-                            <f:fields>
-                                <Input value="0" id="b1"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="2º {i18n>bi}">
-                            <f:fields>
-                                <Input value="0" id="b2"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="3º {i18n>bi}">
-                            <f:fields>
-                                <Input value="0" id="b3"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="4º {i18n>bi}">
-                            <f:fields>
-                                <Input value="0" id="b4"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="{i18n>result}">
-                            <f:fields>
-                                <Input value="0" id="resultado" editable="false"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="">
-                            <f:fields>
-                                <Button text="{i18n>calc}" press="onCalcular"/>
-                            </f:fields>
-                        </f:FormElement>
-                    </f:formElements>
-                </f:FormContainer>
-            </f:formContainers>
-        </f:Form>
+      <VBox class="sapUiTinyMargin">
+        <Label text="Model padrão da view (origem: controller)"/>
+        <Text text="{/usuario/nome}"/>
+
+        <Text text="--------------------------------------------------"/>
+
+        <Label text="Model 'dados' da view (origem: controller)"/>
+        <Text text="{dados>/usuario/nome}"/>
+
+        <Text text="--------------------------------------------------"/>
+        
+        <Label text="Model i18n - chave title (origem: manifest)"/>
+        <Text text="{i18n>title}"/>
+
+        <Text text="--------------------------------------------------"/>
+
+        <Label text="Model 'usuarios' (origem: manifest)"/>
+        <Text text="{usuarios>/0/id} - {usuarios>/0/nome}"/>
+
+        <Text text="--------------------------------------------------"/>
+        
+        <Label text="Model padrão do serviço (origem: manifest)"/>
+        <List headerText="Ordens" items="{ path: '/OVCabSet' }" >
+          <StandardListItem title="Ordem {OrdemId}" description="{CriadoPor}"/>
+        </List>
+
+        <Text text="{/OVCabSet(3)/OrdemId} - {/OVCabSet(3)/CriadoPor}"/>
+
+        <Text text="--------------------------------------------------"/>
+
+        <Button text="Testar Models" press="onTestModels"/>
+      </VBox>
     </Page>
 </mvc:View>
